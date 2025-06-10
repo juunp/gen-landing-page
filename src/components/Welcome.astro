@@ -1,0 +1,139 @@
+<div id="container">
+	<div id="preview">
+		<div>
+			<div id="preview-container">
+				<div class="phone-notch"></div>
+				<phone-background color="#4f46e5" background-color="#3ffffff" font-family="System UI">
+					<!-- Default content -->
+					<div id="default-section">
+						<h2>Bienvenue sur le customizer</h2>
+						<p>
+							Construis ta landing page bloc par bloc depuis la
+							partie droite
+						</p>
+					</div>
+				</phone-background>
+			</div>
+		</div>
+	</div>
+	<div id="customize-panel" style="max-height: 800px;">
+		<div>
+			<h2>Paramétrage</h2>
+			<div>
+				<div>
+					<label>Background Color</label>
+					<input type="color" id="bg-color" value="#ffffff" />
+				</div>
+				<div>
+					<label>Primary Color</label>
+					<input type="color" id="primary-color" value="#4f46e5" />
+				</div>
+			</div>
+			<div class="mb-4">
+				<label>Font Family</label>
+				<select id="font-family">
+					<option value="sans-serif">System UI</option>
+					<option value="serif">Serif</option>
+					<option value="monospace">Monospace</option>
+					<option value="cursive">Cursive</option>
+				</select>
+			</div>
+		</div>
+
+		<div>
+			<h2>Ajout d'un bloc</h2>
+			<div>
+				<button id="add-header">
+					<i class="fas fa-heading"></i> Header
+				</button>
+				<button id="add-image">
+					<i class="fas fa-image"></i> Image
+				</button>
+				<button id="add-text">
+					<i class="fas fa-paragraph"></i> Texte
+				</button>
+				<button id="add-button">
+					<i class="fas fa-square"></i> Bouton
+				</button>
+				<button id="add-form">
+					<i class="fas fa-list"></i> Formulaire
+				</button>
+				<button id="add-social">
+					<i class="fas fa-share-alt"></i> Lien réseaux sociaux
+				</button>
+			</div>
+		</div>
+
+		<div id="component-controls" class="space-y-6">
+			<!-- Component controls will appear here -->
+			<div id="no-components-message">
+				<p>Ajoute un bloc pour voir les paramètres</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	#container {
+		display: inline-grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.highlight-preview {
+		box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.5);
+		transition: box-shadow 0.3s ease;
+	}
+	#preview-container {
+		height: 600px;
+		width: 300px;
+		border-radius: 40px;
+		border: 12px solid #333;
+		overflow: hidden;
+		position: relative;
+	}
+	.phone-notch {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40%;
+		height: 20px;
+		background: #333;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		z-index: 20;
+	}
+	.draggable {
+		cursor: move;
+		position: relative;
+		z-index: 10;
+	}
+	.draggable:active {
+		cursor: grabbing;
+	}
+	.resize-handle {
+		width: 10px;
+		height: 10px;
+		background: white;
+		border: 2px solid #4f46e5;
+		position: absolute;
+		right: -5px;
+		bottom: -5px;
+		cursor: nwse-resize;
+	}
+	#customize-panel {
+		scrollbar-width: thin;
+	}
+	#customize-panel::-webkit-scrollbar {
+		width: 6px;
+	}
+	#customize-panel::-webkit-scrollbar-thumb {
+		background-color: #c7d2fe;
+		border-radius: 6px;
+	}
+	#fileInput {
+		display: none;
+	}
+	.section-controls {
+		background-color: rgba(99, 102, 241, 0.1);
+	}
+</style>
